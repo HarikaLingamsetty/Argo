@@ -4,9 +4,9 @@ metadata:
   name: cronjob
   namespace: default
   annotations:
-    offsetMinutes: "5" 
+    offsetMinutes: "5"
 spec:
-  schedule: {{ .Values.cronSchedule }}
+  schedule: "{{ .Values.cronSchedule }}" 
   jobTemplate:
     spec:
       template:
@@ -15,4 +15,10 @@ spec:
           - name: date
             image: busybox
             command: ["date"]
+            env:
+            - name: CRON_SCHEDULE
+              valueFrom:
+                configMapKeyRef:
+                  name: cronjob-config
+                  key: cronSchedule  
           restartPolicy: OnFailure
