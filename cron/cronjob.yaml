@@ -3,8 +3,10 @@ kind: CronJob
 metadata:
   name: cronjob
   namespace: default
+  annotations:
+    offsetMinutes: "5" 
 spec:
-  schedule: "*/2 * * * *"
+  schedule: "*/5 * * * *" 
   jobTemplate:
     spec:
       template:
