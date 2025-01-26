@@ -6,7 +6,7 @@ metadata:
   annotations:
     offsetMinutes: "5" 
 spec:
-  schedule: "*/5 * * * *"  
+  schedule: "*/1 * * * *"  
   jobTemplate:
     spec:
       template:
