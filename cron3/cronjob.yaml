@@ -6,7 +6,7 @@ metadata:
   annotations:
     offsetMinutes: "5" 
   labels:
-   pod: cronjob
+   pod: notcronjob
 spec:
   schedule: "*/1 * * * *"  
   jobTemplate:
